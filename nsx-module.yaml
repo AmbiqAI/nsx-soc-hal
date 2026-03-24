@@ -1,0 +1,35 @@
+schema_version: 1
+
+module:
+  name: nsx-soc-hal
+  type: soc
+  version: "0.1.0"
+
+support:
+  ambiqsuite: true
+  zephyr: false
+
+build:
+  cmake:
+    package: nsx_soc_${target.soc}
+    targets:
+      - nsx::soc_hal
+
+depends:
+  required: []
+  optional: []
+
+compatibility:
+  boards:
+    - "*"
+  socs:
+    - apollo3
+    - apollo3p
+    - apollo4l
+    - apollo4p
+    - apollo5b
+    - apollo510
+    - apollo510b
+    - apollo330P
+  toolchains:
+    - arm-none-eabi-gcc
